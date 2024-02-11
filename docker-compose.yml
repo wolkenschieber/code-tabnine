@@ -1,0 +1,29 @@
+---
+version: "3.9"
+
+services:
+  code-tabnine:
+    image: wolkenschieber/code-tabnine:latest
+    restart: unless-stopped
+    container_name: code-tabnine
+    security_opt: 
+      - seccomp:unconfined
+    shm_size: '1gb'
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - CODE_DEBUG=0
+      - CODE_RUN_AS_ROOT=0
+    ports:
+      - "3000:3000"
+    networks:
+      - code-tabnine
+    volumes:
+      - config:/config
+
+networks:
+  code-tabnine:
+
+volumes:
+  config:

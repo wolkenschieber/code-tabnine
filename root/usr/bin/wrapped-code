@@ -1,0 +1,28 @@
+#!/bin/bash
+BIN='/opt/VSCode-linux-x64/code'
+SUDO='sudo'
+USER_DIR='/config/.vscode'
+
+if [ "${UID}" -ne 911 ]; then
+    chown -R ${UID} ${USER_DIR}
+fi
+
+if [ -z "${CODE_RUN_AS_ROOT}" ]; then
+    CODE_RUN_AS_ROOT=0
+fi
+
+if [ "${CODE_RUN_AS_ROOT}" -eq 1 ]; then
+    COMMAND="${SUDO} ${BIN} --disable-chromium-sandbox"
+else
+    COMMAND="${BIN}"
+fi
+
+if [ -z "${CODE_DEBUG}" ]; then
+    CODE_DEBUG=0
+fi
+
+if [ "${CODE_DEBUG}" -eq 1 ]; then
+    COMMAND="${COMMAND} --verbose"
+fi
+
+${COMMAND}

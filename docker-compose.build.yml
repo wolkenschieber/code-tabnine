@@ -1,0 +1,9 @@
+---
+version: "3.9"
+
+services:
+  code-tabnine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      shm_size: '1gb'

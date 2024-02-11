@@ -19,6 +19,7 @@ docker run --detach \
     -e PGID=1000 \
     -e TZ=Europe/Berlin \
     -p 3000:3000 \
+    -v /config \
     --name code-tabnine \
     --security-opt seccomp=unconfined \
     --shm-size="1gb" \
@@ -53,7 +54,7 @@ docker build --tag wolkenschieber/code-tabnine:latest .
 
 ## Docker Compose
 
-This project provides a sample [docker-compose.yml](https://github.com/wolkenschieber/code-tabnine/blob/master/docker-compose.yml) file.
+This project provides a sample [docker-compose.yml](https://github.com/wolkenschieber/code-tabnine/blob/master/docker-compose.yml) file. The setup provides persistence.
 
 ### Run
 

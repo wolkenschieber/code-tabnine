@@ -15,7 +15,7 @@ services:
       - PGID=20
       - TZ=Europe/Berlin
       - CODE_DEBUG=0
-      - CODE_RUN_AS_ROOT=0
+      - CODE_RUN_AS_ROOT=1
     ports:
       - "3000:3000"
     networks:

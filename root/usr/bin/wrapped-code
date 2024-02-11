@@ -4,7 +4,7 @@ SUDO='sudo'
 USER_DIR='/config/.vscode'
 
 if [ "${UID}" -ne 911 ]; then
-    chown -R ${UID} ${USER_DIR}
+    ${SUDO} chown -R ${UID} ${USER_DIR}
 fi
 
 if [ -z "${CODE_RUN_AS_ROOT}" ]; then
@@ -12,7 +12,7 @@ if [ -z "${CODE_RUN_AS_ROOT}" ]; then
 fi
 
 if [ "${CODE_RUN_AS_ROOT}" -eq 1 ]; then
-    COMMAND="${SUDO} ${BIN} --disable-chromium-sandbox --no-sandbox"
+    COMMAND="${SUDO} ${BIN} --disable-chromium-sandbox --no-sandbox --user-data-dir ${USER_DIR} --extensions-dir ${USER_DIR}/extensions"
 else
     COMMAND="${BIN}"
 fi

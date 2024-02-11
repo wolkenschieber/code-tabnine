@@ -5,7 +5,7 @@ SUDO='/usr/bin/sudo'
 USER_DIR='/config/.vscode'
 
 if [ "${UID}" -ne 911 ] && [ "${UID}" -ne 0 ]; then
-    ${SUDO} ${CHOWN} -R ${UID} ${USER_DIR}
+    ${SUDO} ${CHOWN} -Rf ${UID} ${USER_DIR}
 fi
 
 if [ -z "${CODE_RUN_AS_ROOT}" ]; then

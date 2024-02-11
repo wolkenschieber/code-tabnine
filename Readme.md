@@ -90,7 +90,7 @@ environment:
 | `-e CODE_DEBUG=1` | run Code with program args `--verbose` |
 | `-e CODE_RUN_AS_ROOT=1` | run Code as root |
 | `-v /config` | User's home directory in the container, stores program settings. |
-| `--security-opt seccomp=unconfined` | Permits syscalls of Chromium and Code |
+| `--security-opt seccomp=unconfined` | Permits syscalls of Code |
 | `--shm-size=` | This is needed for electron applications to function properly. |
 
 ## Links

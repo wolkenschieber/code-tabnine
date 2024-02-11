@@ -12,7 +12,7 @@ if [ -z "${CODE_RUN_AS_ROOT}" ]; then
 fi
 
 if [ "${CODE_RUN_AS_ROOT}" -eq 1 ]; then
-    COMMAND="${SUDO} ${BIN} --disable-chromium-sandbox"
+    COMMAND="${SUDO} ${BIN} --disable-chromium-sandbox --no-sandbox"
 else
     COMMAND="${BIN}"
 fi

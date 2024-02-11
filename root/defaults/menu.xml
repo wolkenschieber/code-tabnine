@@ -6,9 +6,9 @@
                 <command>/usr/bin/xterm</command>
             </action>
         </item>
-        <item label="Chromium" icon="/usr/share/icons/hicolor/48x48/apps/chromium.png">
+        <item label="FireFox" icon="/usr/share/icons/hicolor/48x48/apps/firefox-esr.png">
             <action name="Execute">
-                <command>/usr/bin/wrapped-chromium</command>
+                <command>/usr/bin/firefox</command>
             </action>
         </item>
         <item label="Visual Studio Code" icon="/opt/VSCode-linux-x64/resources/app/resources/linux/code.png">

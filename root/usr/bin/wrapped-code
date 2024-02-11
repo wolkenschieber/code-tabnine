@@ -1,10 +1,11 @@
 #!/bin/bash
 BIN='/opt/VSCode-linux-x64/code'
-SUDO='sudo'
+CHOWN='/usr/bin/chown'
+SUDO='/usr/bin/sudo'
 USER_DIR='/config/.vscode'
 
-if [ "${UID}" -ne 911 ]; then
-    ${SUDO} chown -R ${UID} ${USER_DIR}
+if [ "${UID}" -ne 911 ] && [ "${UID}" -ne 0 ]; then
+    ${SUDO} ${CHOWN} -R ${UID} ${USER_DIR}
 fi
 
 if [ -z "${CODE_RUN_AS_ROOT}" ]; then
@@ -25,4 +26,4 @@ if [ "${CODE_DEBUG}" -eq 1 ]; then
     COMMAND="${COMMAND} --verbose"
 fi
 
-${COMMAND}
+${COMMAND} "$@"

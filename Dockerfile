@@ -11,7 +11,7 @@ RUN \
   mkdir -p /usr/share/man/man1 \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-    curl chromium chromium-l10n git openjdk-17-jdk \ 
+    curl firefox-esr git openjdk-17-jdk \ 
   && apt-get autoclean \
   && rm -rf \
     /config/.cache \

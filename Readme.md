@@ -93,10 +93,6 @@ environment:
 | `--security-opt seccomp=unconfined` | Permits syscalls of Chromium and Code |
 | `--shm-size=` | This is needed for electron applications to function properly. |
 
-## Mac/Apple silicon
-
-On Apple silicon run [docker-compose.mac.yml](https://github.com/wolkenschieber/code-tabnine/blob/master/docker-compose.mac.yml) file. Update `PUID` and `PGID` according to the output of `id your_user`.
-
 ## Links
 
 * [linuxserver/kasmvnc](https://github.com/linuxserver/docker-baseimage-kasmvnc)
